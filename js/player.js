@@ -3,6 +3,7 @@ class Player{
    this.name = null;
    this.distance = 0;
    this.index = null;
+   this.rank = 0;
    
   } 
   
@@ -13,7 +14,7 @@ class Player{
   }
 
   writePlayers(){
-   database.ref("/players/player"+playerCount).set({name:this.name,distance:this.distance});
+   database.ref("/players/player"+this.index).set({name:this.name,distance:this.distance,rank:this.rank});
   }
 
   updateCount(count){
@@ -26,4 +27,19 @@ class Player{
      allPlayers = data.val();
    }); 
   }
+
+  deletePlayers(){
+   database.ref('/players').remove(); 
+  }
+
+  static readRank(){
+   database.ref('/players/player'+this.index).on("value",(data)=>{
+   this.rank = data.val();
+   }) 
+  }
+
+  updateRank(rank){
+   database.ref('/players/player'+this.index).update({rank:rank}); 
+  }
 }
+

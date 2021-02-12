@@ -28,17 +28,17 @@ function setup(){
   if(gameState === 0){
    form.display();
    player.readPlayerCount();
-   car1 = createSprite(200,400,20,20);
-   car1.addImage("car1",carImg);
-   car2 = createSprite(200,300,20,20);
-   car2.addImage("car2",car2Img);
-   car3 = createSprite(200,200,20,20);
-   car3.addImage("car3",car3Img);
-   car4 = createSprite(200,100,20,20);
-   car4.addImage("car4",car4Img);
-
-   cars = [car1,car2,car3,car4];
   }
+  car1 = createSprite(200,400,20,20);
+  car1.addImage("car1",carImg);
+  car2 = createSprite(200,300,20,20);
+  car2.addImage("car2",car2Img);
+  car3 = createSprite(200,200,20,20);
+  car3.addImage("car3",car3Img);
+  car4 = createSprite(200,100,20,20);
+  car4.addImage("car4",car4Img);
+
+  cars = [car1,car2,car3,car4];
 }
 
 function draw(){
